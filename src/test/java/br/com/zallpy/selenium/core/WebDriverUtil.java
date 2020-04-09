@@ -107,7 +107,8 @@ public class WebDriverUtil {
 
     return driverBaseUrl
         .replace("${selenium.web-driver.version}", driverVersion)
-        .replace("$os",suffix);
+        .replace("$os",suffix)
+        .replace("$extension", getExtension());
   }
 
   private static void loadProperties() throws IOException {
