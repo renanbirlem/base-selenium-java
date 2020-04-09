@@ -2,7 +2,7 @@
   "id": "500557cb-3923-44ab-b400-6aed4e3d18a3",
   "version": "2.0",
   "name": "selenium-project",
-  "url": "https://www.google.com",
+  "url": "https://www.wikipedia.org/",
   "tests": [{
     "id": "2c41c8be-00a7-4573-94f8-76635eed4e36",
     "name": "SearchGoogle",
@@ -82,6 +82,41 @@
         ["xpath=//h2[contains(.,'Getting Started')]", "xpath:innerText"]
       ],
       "value": "Getting Started"
+    }]
+  }, {
+    "id": "3918849e-06b2-4284-8ca9-df86dc289650",
+    "name": "SearchWikipedia",
+    "commands": [{
+      "id": "1a2657b3-589b-430c-a07e-3635372e0ffe",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "943df6ce-64c3-4303-af2b-105c392efcd0",
+      "comment": "",
+      "command": "click",
+      "target": "css=#js-link-box-pt > strong",
+      "targets": [
+        ["css=#js-link-box-pt > strong", "css:finder"],
+        ["xpath=//a[@id='js-link-box-pt']/strong", "xpath:idRelative"],
+        ["xpath=//div[9]/a/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Português')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ddd5b19-86af-428c-9bdd-4d20fd51cff7",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=table:nth-child(2) td:nth-child(1) > span",
+      "targets": [
+        ["css=table:nth-child(2) td:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='mw-content-text']/div/table/tbody/tr/td/span", "xpath:idRelative"],
+        ["xpath=//div[4]/div/table/tbody/tr/td/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Artigo em destaque')]", "xpath:innerText"]
+      ],
+      "value": "Artigo em destaque"
     }]
   }],
   "suites": [{
