@@ -1,0 +1,97 @@
+{
+  "id": "500557cb-3923-44ab-b400-6aed4e3d18a3",
+  "version": "2.0",
+  "name": "selenium-project",
+  "url": "https://www.google.com",
+  "tests": [{
+    "id": "2c41c8be-00a7-4573-94f8-76635eed4e36",
+    "name": "SearchGoogle",
+    "commands": [{
+      "id": "a9bb1f0f-c8ac-4814-b577-1a1490691d1b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3ba3f903-34e2-41ac-bd43-0727bd8c1eb4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1299x717",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "740c6ac1-13ee-4cf4-bc85-ce1f867e4033",
+      "comment": "",
+      "command": "click",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.gLFyf", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//form[@id='tsf']/div[2]/div/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9ae58de-e7f7-449b-b132-83b177e2b510",
+      "comment": "",
+      "command": "type",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.gLFyf", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//form[@id='tsf']/div[2]/div/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "selenium.dev"
+    }, {
+      "id": "4edbc186-931f-4f33-851c-79def6a377ab",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.gLFyf", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//form[@id='tsf']/div[2]/div/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "238153e8-41d3-4455-8e46-cf92639bedb9",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(2) > .rc:nth-child(1) .LC20lb",
+      "targets": [
+        ["css=div:nth-child(2) > .rc:nth-child(1) .LC20lb", "css:finder"],
+        ["xpath=//div[@id='rso']/div/div/div/div/a/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Selenium')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "790a50b9-2e6d-4774-86b0-e22b4af05558",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.getting-started > h2",
+      "targets": [
+        ["css=.getting-started > h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Getting Started')]", "xpath:innerText"]
+      ],
+      "value": "Getting Started"
+    }]
+  }],
+  "suites": [{
+    "id": "5e175048-ce2b-4019-8527-3056cbcd5705",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2c41c8be-00a7-4573-94f8-76635eed4e36"]
+  }],
+  "urls": ["https://www.google.com/", "http://portaloficinas.qa.zallpylabs.com/", "https://www.wikipedia.org/"],
+  "plugins": []
+}

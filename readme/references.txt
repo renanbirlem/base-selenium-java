@@ -1,0 +1,7 @@
+https://www.selenium.dev/documentation/en/getting_started/
+
+https://www.selenium.dev/documentation/en/webdriver/driver_requirements/#quick-reference
+
+https://chromedriver.storage.googleapis.com/index.html
+
+https://github.com/mozilla/geckodriver/releases
