@@ -37,7 +37,7 @@ public class WebDriverUtil {
     final String tmp = System.getProperty("java.io.tmpdir");
     final String path = tmp + S + seleniumFolder;
 
-    final File bin = new File(path + S + driverName);
+    final File bin = new File(path + S + getDriverName());
 
     if (!bin.exists()) {
       LOGGER.info("WebDriver not found");
@@ -66,11 +66,19 @@ public class WebDriverUtil {
     LOGGER.info("Adding WebDriver to path");
 
     if (isChrome()) {
-      System.setProperty("webdriver.chrome.driver", path + S + driverName);
+      System.setProperty("webdriver.chrome.driver", path + S + getDriverName());
 
     } else {
-      System.setProperty("webdriver.gecko.driver", path + S + driverName);
+      System.setProperty("webdriver.gecko.driver", path + S + getDriverName());
     }
+  }
+
+  private static String getDriverName() {
+    if (OSValidator.isWindows()) {
+      return driverName + ".exe";
+    }
+
+    return driverName;
   }
 
   private static boolean isChrome() {
@@ -103,7 +111,11 @@ public class WebDriverUtil {
   }
 
   private static String formatUrl() {
-    final String suffix = OSValidator.getSuffix();
+    String suffix = OSValidator.getSuffix();
+
+    if(!isChrome() && OSValidator.isWindows()) {
+      suffix = suffix.replace("32","64");
+    }
 
     return driverBaseUrl
         .replace("${selenium.web-driver.version}", driverVersion)
