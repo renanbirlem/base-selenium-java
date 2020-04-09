@@ -90,11 +90,11 @@ public class WebDriverUtil {
   }
 
   private static boolean isZip() {
-    return driverBaseUrl.endsWith("zip");
+    return getExtension().endsWith("zip");
   }
 
   private static String getExtension() {
-    if (isZip()) {
+    if(isChrome() || OSValidator.isWindows()) {
       return ".zip";
 
     } else {
