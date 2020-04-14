@@ -1,0 +1,109 @@
+{
+  "id": "8b84b70b-4aff-497c-acb6-c3b62e152cf4",
+  "version": "2.0",
+  "name": "login-portal-oficinas",
+  "url": "http://portaloficinas.qa.zallpylabs.com/",
+  "tests": [{
+    "id": "6d12a6f5-3a08-43c1-8696-6ab0ebf35205",
+    "name": "LoginPortalOficinas",
+    "commands": [{
+      "id": "a6a7d479-7afd-4b3f-9bd6-5345950c1a01",
+      "comment": "",
+      "command": "open",
+      "target": "http://portaloficinas.qa.zallpylabs.com/pt",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "46ac5e15-e47d-457e-b612-1279624717f0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1079x697",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dc10d4c6-36bb-4479-9acc-5a9f0327fcc6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-root:nth-child(3) > .TLogLabel-sc-3et8lx-0",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(3) > .TLogLabel-sc-3et8lx-0", "css:finder"],
+        ["xpath=//div[@id='__next']/div/div[3]/div/div/div[2]/div/div[3]/label", "xpath:idRelative"],
+        ["xpath=//div[3]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Sou Motorista')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe973854-e9a0-40b7-b7ec-4c0fa011a7e6",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.Mui-focused > .MuiInputBase-input", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1e37bf4-0248-4ec3-9318-0c897b5033e0",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.Mui-focused > .MuiInputBase-input", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "ivanzallpy@gmail.com"
+    }, {
+      "id": "063db823-d19d-43e4-92b8-6582d1291637",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.Mui-focused > .MuiInputBase-input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div/input", "xpath:position"]
+      ],
+      "value": "sistemas"
+    }, {
+      "id": "34449630-eaf9-4c07-a4db-8fe8a9111353",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-label", "css:finder"],
+        ["xpath=//form/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9518d72-55d7-41c3-a1dc-cc95b6bd276c",
+      "comment": "",
+      "command": "click",
+      "target": "css=#menu-LOGOUT .MuiSvgIcon-root",
+      "targets": [
+        ["css=#menu-LOGOUT .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1ac26d8-12f3-41a6-8998-e245015e9d0a",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "800012f5-2dcd-45e5-8e97-9c38136b7e9c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6d12a6f5-3a08-43c1-8696-6ab0ebf35205"]
+  }],
+  "urls": ["http://portaloficinas.qa.zallpylabs.com/"],
+  "plugins": []
+}
