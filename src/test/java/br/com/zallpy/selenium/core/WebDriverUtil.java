@@ -13,7 +13,9 @@ import net.lingala.zip4j.ZipFile;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.rauschig.jarchivelib.Archiver;
 import org.rauschig.jarchivelib.ArchiverFactory;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -30,6 +32,7 @@ public class WebDriverUtil {
   private static String driverVersion;
   private static String driverName;
   private static String seleniumFolder;
+  private static boolean headless;
 
   public static void check() throws IOException {
     loadProperties();
@@ -137,6 +140,9 @@ public class WebDriverUtil {
     driverBaseUrl = get(properties, "selenium.web-driver.base-url");
     driverVersion = get(properties, "selenium.web-driver.version");
     seleniumFolder = get(properties,"selenium.folder");
+
+    String h = get(properties, "selenium.headless");
+    headless = h != null && h.equalsIgnoreCase("true");
   }
 
   private static String get(Properties props, String key) {
@@ -159,10 +165,14 @@ public class WebDriverUtil {
 
   public static WebDriver driver() {
     if (isChrome()) {
-      return new ChromeDriver();
+      ChromeOptions op = new ChromeOptions();
+      op.setHeadless(headless);
+      return new ChromeDriver(op);
 
     } else {
-      return new FirefoxDriver();
+      FirefoxOptions op = new FirefoxOptions();
+      op.setHeadless(headless);
+      return new FirefoxDriver(op);
     }
   }
 }
